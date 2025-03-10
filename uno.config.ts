@@ -22,6 +22,8 @@ export default defineConfig({
       'border-active': 'border-primary-600/25 dark:border-primary-400/25',
       'bg-active': 'bg-#8881',
 
+      'icon-btn': 'rounded-full hover:bg-active op50 hover:op100 flex items-center justify-center transition-all',
+
       'z-graph-bg': 'z-5',
       'z-graph-link': 'z-10',
       'z-graph-node': 'z-11',

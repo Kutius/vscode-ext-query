@@ -5,18 +5,16 @@ import { toggleDark } from '~/composables/dark'
 <template>
   <div
     flex="~ items-center"
-    z-panel-nav fixed right-4 top-4 border border-base rounded-full shadow bg-glass
+    fixed right-4 top-4 z-panel-nav border border-base rounded-full shadow bg-glass
   >
     <a
-      h-10 w-10 rounded-full hover:bg-active op50 hover:op100
-      flex="~ items-center justify-center"
+      icon-btn h-10 w-10
       href="https://github.com/kutius" target="_blank"
     >
       <div i-ri-github-fill text-xl />
     </a>
     <button
-      h-10 w-10 rounded-full hover:bg-active op50 hover:op100
-      flex="~ items-center justify-center"
+      icon-btn h-10 w-10
       title="Toggle Dark Mode"
       @click="toggleDark()"
     >

@@ -12,7 +12,6 @@ const { data, execute, status } = useFetch('/api/ext', {
 })
 
 const isLoading = computed(() => status.value === 'pending')
-const extensions = computed(() => data.value?.data?.[0].extensions || [])
 </script>
 
 <template>
@@ -46,28 +45,7 @@ const extensions = computed(() => data.value?.data?.[0].extensions || [])
         </button>
       </label>
 
-      <!-- 搜索结果展示区域 -->
-      <div v-if="extensions.length" mt-8 max-w-4xl w-full>
-        <div mb-4 text-xl font-medium>
-          Query Results
-        </div>
-        <div grid="~ cols-1 md:cols-2 lg:cols-3 gap-4">
-          <UiExtensionCard
-            v-for="extension in extensions"
-            :key="extension.extensionId"
-            :extension="extension"
-          />
-        </div>
-      </div>
-
-      <div v-else-if="data?.value && !isLoading" mt-8 op75>
-        <div mb-4 text-xl font-medium>
-          No results found
-        </div>
-        <div text-sm>
-          Please try again with a different keyword.
-        </div>
-      </div>
+      <UiResultList :data :is-loading />
     </div>
   </div>
 </template>
